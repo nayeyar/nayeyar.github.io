@@ -1,0 +1,40 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-image: url("will-van-wingerden-cZVthlrnlnQ-unsplash.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 30%;
+	width: 60%;
+	background-color: rgba(192, 192, 192, 0.3);
+	border: groove 1px whitesmoke;
+	border-radius: 30px;
+	position: relative;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.quote,
+.button {
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 18px;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+}
