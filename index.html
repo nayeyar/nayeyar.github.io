@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Home</title>
-		<link rel="stylesheet" href="resources/css/style.css" />
+		
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -16,84 +16,75 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
 		/>
+		
+		<link rel="stylesheet" href="resources/css/style.css"/>
+		<link rel="stylesheet" href="bubbletext/bubstyle.css">
+		<script
+			type="text/javascript"
+			src="https://code.jquery.com/jquery-1.10.2.min.js"
+		></script>
+		<script type="text/javascript" src="bubbletext/alphabet.js"></script>
+		
 	</head>
 	<body>
 		<header>
-			<div class="container-fluid fixed-top">
+			<!--<div class="container-fluid fixed-top">
 				<div class="row">
-					<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
-						<!--style="--bs-bg-opacity: .5"-->
-						<div class="container-fluid">
-							<a class="navbar-brand" href="#"
-								>NAY<span class="text-danger">A</span></a
-							>
-							<button
-								class="navbar-toggler"
-								type="button"
-								data-bs-toggle="collapse"
-								data-bs-target="#navbarSupportedContent"
-								aria-controls="navbarSupportedContent"
-								aria-expanded="false"
-								aria-label="Toggle navigation"
-							>
-								<span class="navbar-toggler-icon"></span>
-							</button>
-							<div class="collapse navbar-collapse" id="navbarSupportedContent">
-								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-									<li class="nav-item">
-										<a class="nav-link active" aria-current="page" href="#"
-											>Home</a
-										>
+				</div>
+			</div> container-->
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient fixed-top">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#"
+						>NAY<span class="text-danger">A</span></a
+					>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse custom-alignment" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0 test-styling">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#aboutme">About</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									id="navbarDropdown"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									Projects
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="#">Action</a></li>
+									<li>
+										<a class="dropdown-item" href="#">Another action</a>
 									</li>
-									<li class="nav-item">
-										<a class="nav-link" href="#">About</a>
-									</li>
-									<li class="nav-item dropdown">
-										<a
-											class="nav-link dropdown-toggle"
-											href="#"
-											id="navbarDropdown"
-											role="button"
-											data-bs-toggle="dropdown"
-											aria-expanded="false"
-										>
-											Projects
-										</a>
-										<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-											<li><a class="dropdown-item" href="#">Action</a></li>
-											<li>
-												<a class="dropdown-item" href="#">Another action</a>
-											</li>
-											<li><hr class="dropdown-divider" /></li>
-											<li>
-												<a class="dropdown-item" href="#"
-													>Something else here</a
-												>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link disabled">Disabled</a>
+									<li><hr class="dropdown-divider" /></li>
+									<li>
+										<a class="dropdown-item" href="test.html">Something else here</a>
 									</li>
 								</ul>
-								<form class="d-flex" role="search">
-									<input
-										class="form-control me-2"
-										type="search"
-										placeholder="Search"
-										aria-label="Search"
-									/>
-									<button class="btn btn-outline-success" type="submit">
-										Search
-									</button>
-								</form>
-							</div>
-						</div>
-					</nav>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link disabled">Disabled</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<!--row-->
-			</div>
-			<!--container-->
+			</nav>
 		</header>
 
 		<div class="view_port">
@@ -103,6 +94,7 @@
 			<div class="cylon_eye"></div>
 		</div>
 
+		<!--Showcase-->
 		<div class="showcase position-relative">
 			<figure class="bgvid">
 				<video
@@ -117,7 +109,11 @@
 			<div
 				class="title text-center mb-1 pb-1 position-absolute top-50 start-50 translate-middle bg-light bg-gradient bg-opacity-10 rounded"
 			>
-				<h1 class="text-light">WELCOME</h1>
+				<!-- <h1 class="text-light">WELCOME</h1> -->
+				<div class="texteffectcontainer rounded">
+					<div class="textglitch text-center" title="WELCOME">WELCOME</div>
+				</div>
+				
 				<img
 					src="resources/images/Ee1aZXyWkAArBZY Sqrtio.png"
 					class="profilePicture"
@@ -132,35 +128,101 @@
 				</button>
 			</div>
 		</div>
+		
 
+		<!--Timeline-->
 		<section>
-			<div class="container bg-dark bg-gradient">
+			<div class="container-fluid bg-secondary bg-opacity-50">
 				<div class="row">
-					<div class="col-md-12">
+					<br>
+					<h2 class="text-center text-light" id="aboutme">About Me</h2>
+					<br>
+					<div class="col-md">
 						<div class="main-timeline">
 							<div class="timeline">
 								<a href="#" class="timeline-content">
-									<div class="timeline-icon"><i class="fa fa-globe"></i></div>
-									<h3 class="title">Web Designing</h3>
+									<div class="timeline-icon">
+										<i class="fa fa-rocket"></i>
+									</div>
+									<span class="timeline-year">2022</span>
+									<h3 class="title">Freelance</h3>
 									<p class="description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-										Integer males uada tellus lorem, et condimentum neque
-										commodo Integer males uada tellus lorem, et condimentum
-										neque commodo
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo
 									</p>
 								</a>
 							</div>
 							<div class="timeline">
 								<a href="#" class="timeline-content">
-									<div class="timeline-icon"><i class="fa fa-rocket"></i></div>
-									<h3 class="title">Web Development</h3>
+									<div class="timeline-icon">
+										<i class="fa fa-globe">
+											<img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-web-halloween-flatart-icons-outline-flatarticons-1.png"/>
+										</i>
+									</div>
+									<span class="timeline-year">2022</span>
+									<h3 class="title">Web Analyst</h3>
 									<p class="description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-										Integer males uada tellus lorem, et condimentum neque
-										commodo Integer males uada tellus lorem, et condimentum
-										neque commodo
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo
 									</p>
 								</a>
+							</div>
+							<div class="timeline">
+								<a href="#" class="timeline-content">
+									<div class="timeline-icon">
+										<i class="fa fa-globe">
+											<img src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/36/000000/external-system-human-networking-parzival-1997-outline-color-parzival-1997.png"/>
+										</i>
+									</div>
+									<span class="timeline-year">2021</span>
+									<h3 class="title">System Analyst</h3>
+									<p class="description">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo
+									</p>
+								</a>
+							</div>
+							<div class="timeline">
+								<a href="#" class="timeline-content">
+									<div class="timeline-icon">
+										<i class="fa fa-itsuprt">
+											<img src="https://img.icons8.com/carbon-copy/45/000000/customer-support.png"/>
+										</i>
+									</div>
+									<span class="timeline-year">2019</span>
+									<h3 class="title">Tech Support</h3>
+									<p class="description">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo
+									</p>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<br />
+
+		<!--Projects-->
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="card" style="width: 18rem">
+							<img
+								src="projects/Random Quote Generator/will-van-wingerden-cZVthlrnlnQ-unsplash.jpg"
+								class="card-img-top"
+								alt="..."
+							/>
+							<div class="card-body">
+								<h5 class="card-title">Random Quote Generator</h5>
+								<p class="card-text">
+									Some quick example text to build on the card title and make up
+									the bulk of the card's content.
+								</p>
+								<a
+									href="projects/Random Quote Generator/index.html"
+									class="btn btn-primary"
+									>View</a
+								>
 							</div>
 						</div>
 					</div>
@@ -170,109 +232,20 @@
 
 		<br>
 
-		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="card" style="width: 18rem">
-							<img src="projects/Random Quote Generator/will-van-wingerden-cZVthlrnlnQ-unsplash.jpg" class="card-img-top" alt="..." />
-							<div class="card-body">
-								<h5 class="card-title">Random Quote Generator</h5>
-								<p class="card-text">
-									Some quick example text to build on the card title and make up
-									the bulk of the card's content.
-								</p>
-								<a href="projects/Random Quote Generator/index.html" class="btn btn-primary">View</a>
-							</div>
-						</div>
-					</div>
+				<!-- <div class="container container-fluid">
+			<div class="row align-items-center justify-contents-center">
+				<div class="col">
+					<figure class="figure bubCanvas">
+						<canvas class="figure-img img-fluid" id="myCanvas"></canvas>
+					</figure>
 				</div>
 			</div>
-		</section>
+		</div> -->
 
-		<main class="mt-2">
-			<div class="container">
-				<div class="row align-items-center justify-contents-center">
-					<div class="col-5">
-						<figure class="figure">
-							<img
-								class="figure-img img-fluid rounded"
-								src="./resources/images/sandro-katalina-k1bO_VTiZSs-unsplash.jpg"
-								alt=""
-							/>
-						</figure>
-					</div>
-					<div class="col">
-						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-							Accusantium cumque obcaecati earum culpa ducimus recusandae
-							facilis. Doloremque, illum accusantium tenetur nostrum iusto, et
-							perspiciatis soluta, architecto sed ducimus unde commodi.
-						</p>
-					</div>
-				</div>
-				<!--row div-->
-				<div class="row align-items-center justify-contents-center">
-					<div class="col">
-						<p>
-							Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-							Accusantium cumque obcaecati earum culpa ducimus recusandae
-							facilis. Doloremque, illum accusantium tenetur nostrum iusto, et
-							perspiciatis soluta, architecto sed ducimus unde commodi.
-						</p>
-					</div>
-					<div class="col-5">
-						<figure class="figure">
-							<img
-								class="figure-img img-fluid rounded"
-								src="./resources/images/chris-liverani-HUJDz6CJEaM-unsplash.jpg"
-								alt=""
-							/>
-						</figure>
-					</div>
-				</div>
-				<!--row-->
-			</div>
-			<!--container-->
-		</main>
-
-		<br />
-
-		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<figure class="figure-img img-fluid rounded ratio ratio-16x9">
-							<iframe
-								width="560"
-								height="315"
-								src="https://www.youtube.com/embed/jfKfPfyJRdk"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</figure>
-					</div>
-
-					<div class="col">
-						<figure class="figure-img img-fluid rounded ratio ratio-16x9">
-							<iframe
-								width="560"
-								height="315"
-								src="https://www.youtube.com/embed/TeB7BucZlWM"
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-							></iframe>
-						</figure>
-					</div>
-				</div>
-				<!--row div-->
-			</div>
-			<!--container-->
-		</section>
+		<figure class="figure bubCanvas">
+			<canvas class="figure-img img-fluid" id="myCanvas"></canvas>
+		</figure>
+		
 
 		<footer>
 			<ul class="nav justify-content-center fixed-bottom bg-dark bg-gradient">
@@ -414,11 +387,13 @@
 				</li>
 			</ul>
 		</footer>
-
+		
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 			crossorigin="anonymous"
 		></script>
+		<script type="text/javascript" src="bubbletext/bubbles.js"></script>
+		<script src="bubbletext/bubindex.js"></script>
 	</body>
 </html>
