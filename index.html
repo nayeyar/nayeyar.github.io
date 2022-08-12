@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Home</title>
-		
+
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -16,15 +16,34 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
 		/>
-		
-		<link rel="stylesheet" href="resources/css/style.css"/>
-		<link rel="stylesheet" href="bubbletext/bubstyle.css">
+
+		<!-- Google Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+		<!-- <link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Tangerine"
+		/>
+		<style>
+			body {
+				font-family: "Tangerine", serif;
+				font-size: 48px;
+				text-shadow: 4px 4px 4px #aaa;
+			}
+		</style> -->
+
+		<link rel="stylesheet" href="resources/css/style.css" />
+		<link rel="stylesheet" href="bubbletext/bubstyle.css" />
+
 		<script
 			type="text/javascript"
 			src="https://code.jquery.com/jquery-1.10.2.min.js"
 		></script>
 		<script type="text/javascript" src="bubbletext/alphabet.js"></script>
-		
 	</head>
 	<body>
 		<header>
@@ -32,11 +51,19 @@
 				<div class="row">
 				</div>
 			</div> container-->
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient fixed-top">
+			<nav
+				class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient fixed-top"
+			>
 				<div class="container-fluid">
-					<a class="navbar-brand" href="#"
+					<!-- <a class="navbar-brand" href="#"
 						>NAY<span class="text-danger">A</span></a
-					>
+					> -->
+					
+					<div class="texteffectcontainer rounded">
+						<div class="textglitch text-center" title="NAYA">
+							NAY<span class="text-danger">A</span>
+						</div>
+					</div>
 					<button
 						class="navbar-toggler"
 						type="button"
@@ -48,7 +75,10 @@
 					>
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<div class="collapse navbar-collapse custom-alignment" id="navbarSupportedContent">
+					<div
+						class="collapse navbar-collapse custom-alignment"
+						id="navbarSupportedContent"
+					>
 						<ul class="navbar-nav me-auto mb-2 mb-lg-0 test-styling">
 							<li class="nav-item">
 								<a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -74,7 +104,9 @@
 									</li>
 									<li><hr class="dropdown-divider" /></li>
 									<li>
-										<a class="dropdown-item" href="test.html">Something else here</a>
+										<a class="dropdown-item" href="test.html"
+											>Something else here</a
+										>
 									</li>
 								</ul>
 							</li>
@@ -89,55 +121,62 @@
 
 		<div class="view_port">
 			<div class="polling_message">
-				<span>This Page is under Development!!!</span>
+				<span>BETA: Live!!!</span>
 			</div>
 			<div class="cylon_eye"></div>
 		</div>
 
 		<!--Showcase-->
 		<div class="showcase position-relative">
-			<figure class="bgvid">
+			<figure class="figure bgvid">
 				<video
-					class="img-fluid"
+					class="figure-img img-fluid"
 					autoplay
 					loop
 					muted
 					playsinline
 					src="./resources/images/video.mp4"
 				></video>
-			</figure>
-			<div
-				class="title text-center mb-1 pb-1 position-absolute top-50 start-50 translate-middle bg-light bg-gradient bg-opacity-10 rounded"
-			>
-				<!-- <h1 class="text-light">WELCOME</h1> -->
-				<div class="texteffectcontainer rounded">
-					<div class="textglitch text-center" title="WELCOME">WELCOME</div>
+				<div
+					class="container portfolioTitle text-center position-absolute top-50 start-50 translate-middle bg-light bg-gradient bg-opacity-10 rounded"
+				>				
+					<!-- <h1 class="text-light">WELCOME</h1> m-1 p-1 mb-1 pb-1-->
+					<!-- <div class="d-flex justify-content-center">
+						<div class="spinner-border" role="status">
+						<span class="visually-hidden">Loading...</span>
+						</div>
+					</div> -->
+					<a href="#aboutme"><img
+						src="resources/images/Ee1aZXyWkAArBZY Sqrtio.png"
+						class="profilePicture position-relative my-1"
+						alt=""
+					/></a>
+					<div class="textscrambleeffect position-relative my-1 bg-dark bg-gradient bg-opacity-50">
+						<div class="text"></div>
+					</div>
+					<!-- <div class="textscrambleeffect">
+						<div class="text"></div>
+					</div> -->
 				</div>
 				
-				<img
-					src="resources/images/Ee1aZXyWkAArBZY Sqrtio.png"
-					class="profilePicture"
-					alt=""
-				/>
-				<br />
-				<button type="button" class="btn btn-lg btn-secondary m-1 p-1">
-					Get Started
-				</button>
-				<button type="button" class="btn btn-lg btn-outline-warning m-1 p-1">
-					Learn More
-				</button>
+			</figure>
+			<div class="textscrambleeffect position-relative start-50 translate-middle bg-dark bg-gradient bg-opacity-50">
+				<div class="text"></div>
 			</div>
 		</div>
 		
-
 		<!--Timeline-->
 		<section>
 			<div class="container-fluid bg-secondary bg-opacity-50">
+				<div class="textanimation">
+					<span class="text1" id="aboutme"> About Me</span>
+					<span class="text2"> Explore Here </span>
+				</div>
 				<div class="row">
-					<br>
-					<h2 class="text-center text-light" id="aboutme">About Me</h2>
-					<br>
-					<div class="col-md">
+					
+					<!-- <h2 class="text-center text-light" id="aboutme">About Me</h2> -->
+					<br />
+					
 						<div class="main-timeline">
 							<div class="timeline">
 								<a href="#" class="timeline-content">
@@ -147,7 +186,7 @@
 									<span class="timeline-year">2022</span>
 									<h3 class="title">Freelance</h3>
 									<p class="description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo
+										Web & App Development for startups, small businesses and productions.
 									</p>
 								</a>
 							</div>
@@ -155,13 +194,16 @@
 								<a href="#" class="timeline-content">
 									<div class="timeline-icon">
 										<i class="fa fa-globe">
-											<img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-web-halloween-flatart-icons-outline-flatarticons-1.png"/>
+											<img
+												src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-web-halloween-flatart-icons-outline-flatarticons-1.png"
+											/>
 										</i>
 									</div>
 									<span class="timeline-year">2022</span>
 									<h3 class="title">Web Analyst</h3>
 									<p class="description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo
+										Manage websites and contents for NYCDOE
+										using multiple CMS.
 									</p>
 								</a>
 							</div>
@@ -169,13 +211,15 @@
 								<a href="#" class="timeline-content">
 									<div class="timeline-icon">
 										<i class="fa fa-globe">
-											<img src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/36/000000/external-system-human-networking-parzival-1997-outline-color-parzival-1997.png"/>
+											<img
+												src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/36/000000/external-system-human-networking-parzival-1997-outline-color-parzival-1997.png"
+											/>
 										</i>
 									</div>
 									<span class="timeline-year">2021</span>
 									<h3 class="title">System Analyst</h3>
 									<p class="description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo
+										Analysis and Desisgn technique to solve problems for the NYCDOE Systems.
 									</p>
 								</a>
 							</div>
@@ -183,13 +227,15 @@
 								<a href="#" class="timeline-content">
 									<div class="timeline-icon">
 										<i class="fa fa-itsuprt">
-											<img src="https://img.icons8.com/carbon-copy/45/000000/customer-support.png"/>
+											<img
+												src="https://img.icons8.com/carbon-copy/45/000000/customer-support.png"
+											/>
 										</i>
 									</div>
 									<span class="timeline-year">2019</span>
 									<h3 class="title">Tech Support</h3>
 									<p class="description">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer males uada tellus lorem, et condimentum neque commodo
+										Experienced technicle support with CRM and other ticketing systems for the NYCDOE.
 									</p>
 								</a>
 							</div>
@@ -198,11 +244,13 @@
 				</div>
 			</div>
 		</section>
-
-		<br />
-
+		<br>
 		<!--Projects-->
 		<section>
+			<div class="textanimation">
+				<span class="text1" id="aboutme"> Projects </span>
+				<span class="text2"> More Coming Soon </span>
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -230,9 +278,9 @@
 			</div>
 		</section>
 
-		<br>
+		<br />
 
-				<!-- <div class="container container-fluid">
+		<!-- <div class="container container-fluid">
 			<div class="row align-items-center justify-contents-center">
 				<div class="col">
 					<figure class="figure bubCanvas">
@@ -245,7 +293,6 @@
 		<figure class="figure bubCanvas">
 			<canvas class="figure-img img-fluid" id="myCanvas"></canvas>
 		</figure>
-		
 
 		<footer>
 			<ul class="nav justify-content-center fixed-bottom bg-dark bg-gradient">
@@ -387,7 +434,7 @@
 				</li>
 			</ul>
 		</footer>
-		
+
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -395,5 +442,7 @@
 		></script>
 		<script type="text/javascript" src="bubbletext/bubbles.js"></script>
 		<script src="bubbletext/bubindex.js"></script>
+		<script src="resources/script/scrollTrigger.js"></script>
+		<script src="resources/script/textScramble.js"></script>
 	</body>
 </html>

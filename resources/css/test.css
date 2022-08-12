@@ -1,0 +1,43 @@
+/* Scroll Trigger */
+@import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+.scrollTrigger *,
+.scrollTrigger *:before,
+.scrollTrigger *:after {
+	box-sizing: border-box;
+	position: relative;
+	letter-spacing: 0.04em;
+}
+/* body {
+  font-family: "Signika Negative", sans-serif;
+  font-weight: 300;
+} */
+.scrollTrigger .section {
+	height: 100vh;
+	width: 100%;
+	position: relative;
+	padding: 0;
+	text-align: center;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.scrollTrigger .bg1 {
+	background-color: #ccc;
+}
+.scrollTrigger .bg2 {
+	background-color: #333;
+}
+.scrollTrigger h1 {
+	font-size: 40px;
+	line-height: 1.2;
+	margin: 0;
+}
+.scrollTrigger .revealUp {
+	opacity: 0;
+	visibility: hidden;
+}
+.scrollTrigger .spacer {
+	height: 50vh;
+	background-color: #000;
+}

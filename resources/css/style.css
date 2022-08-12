@@ -1,4 +1,10 @@
+/* Framework */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,600&display=swap");
 
 * {
 	box-sizing: border-box; /* This new box model avoids the dimensional issues that exist in the former box model you learned about. In this box model, the height and width of the box will remain fixed. The border thickness and padding will be included inside of the box, which means the overall dimensions of the box do not change. border: 1px dotted yellow; */
@@ -6,11 +12,13 @@
 	padding: 0;
 }
 
+/* Pattern */
 body {
 	background-color: #000000;
 	/* opacity: 0.8; */
 	background-image: radial-gradient(#45f75a 0.5px, #000000 0.5px);
 	background-size: 10px 10px;
+	/* font-family: 'Roboto', sans-serif; */
 }
 /*
 .row {
@@ -35,13 +43,27 @@ header {
     justify-items: center;
 } */
 
-.title {
-	width: 40%;
+/* .showcase {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border: 2px solid red;
+} */
+
+/* .bgvid {
+	border: 1px solid yellow;
+} */
+
+.portfolioTitle {
+	min-width: 40%;
+	width: 45%;
+	max-width: 50%;
+	height: auto;
+	/* border: 2px solid blue; */
 }
 
 .profilePicture {
-	max-width: 35%;
-	min-width: 20%;
+	max-width: 37%;
+	min-width: 32%;
 	border-radius: 50%;
 }
 
@@ -114,7 +136,7 @@ footer {
 	margin-top: 60px;
 }
 
-/*Text Effect*/
+/*Text Glitch Effect*/
 @import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
 
 .texteffectcontainer {
@@ -129,9 +151,12 @@ footer {
 	/* background: #131313;
   border: #7d5ac2 solid 2px; */
 	color: #fff;
-	font-size: 76px;
-	font-family: "Fira Mono", monospace;
-	letter-spacing: -7px;
+
+	font-size: 30px;
+	/* font-family: "Fira Mono", monospace; */
+	font-family: "Source Code Pro", monospace;
+	/* font-family: 'Roboto', sans-serif; */
+	letter-spacing: -5px;
 }
 
 .textglitch {
@@ -196,6 +221,84 @@ footer {
 	}
 	62% {
 		transform: translate(-22px, 5px) skew(21deg);
+	}
+}
+
+/* Text Scramble Effect */
+@import "https://fonts.googleapis.com/css?family=Roboto+Mono:100";
+/* html, body {font-family 'Roboto Mono', monospace;
+    background #212121;
+    height 100%;} */
+.textscrambleeffect {
+	/* height: 100%;
+    width: 90%; */
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.text {
+	font-weight: 80;
+	font-size: 15px;
+	color: #fafafa;
+	font-family: "Roboto Mono", monospace;
+}
+.dud {
+	color: #757575;
+}
+
+/* Text Animation */
+.textanimation {
+	text-align: center;
+	/* position: relative; */
+	/* top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+	/* max-height: 40%; */
+	/* width: 100%; */
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+
+.textanimation span {
+	text-transform: uppercase;
+	display: block;
+}
+
+.text1 {
+	color: white;
+	font-size: 30px;
+	font-weight: 400;
+	letter-spacing: 8px;
+	/* margin-bottom: 20px; */
+	background: black;
+	position: relative;
+	/*   shorthand animation property: name | duration | iteration count */
+	/*   animation: text 4s 1; */
+	animation-name: text;
+	animation-duration: 3s;
+	animation-iteration-count: 2;
+}
+
+.text2 {
+	font-size: 20px;
+	color: #ffe997;
+}
+
+@keyframes text {
+	0% {
+		color: black;
+		margin-bottom: -40px;
+	}
+	30% {
+		letter-spacing: 25px;
+		margin-bottom: -40px;
+	}
+	85% {
+		letter-spacing: 8px;
+		margin-bottom: -40px;
+	}
+	100% {
+		margin-bottom: 10px;
 	}
 }
 
