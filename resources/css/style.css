@@ -133,7 +133,7 @@ footer * {
 }*/
 
 footer {
-	margin-top: 60px;
+	margin-top: 24px;
 }
 
 /*Text Glitch Effect*/
@@ -281,7 +281,8 @@ footer {
 
 .text2 {
 	font-size: 20px;
-	color: #ffe997;
+	/* color: #ffe997; */
+	color: #facc15;
 }
 
 @keyframes text {
@@ -303,10 +304,13 @@ footer {
 }
 
 /*Timeline*/
+.fa-dev img {
+	transform: rotate(45deg);
+	margin-bottom: 2px;
+}
 .fa-globe img {
 	margin-bottom: 2px;
 }
-
 .fa-itsuprt img {
 	transform: rotate(45deg);
 	margin-bottom: 20px;
