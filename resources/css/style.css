@@ -12,6 +12,10 @@
 	padding: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 /* Pattern */
 body {
 	background-color: #000000;
@@ -19,6 +23,8 @@ body {
 	background-image: radial-gradient(#45f75a 0.5px, #000000 0.5px);
 	background-size: 10px 10px;
 	/* font-family: 'Roboto', sans-serif; */
+	/* lock horizontal scroll oversize navbar */
+	overflow-x: hidden;
 }
 /*
 .row {
@@ -72,6 +78,7 @@ header {
     border: solid 2px blue; */
 	background-image: url("../images/pexels-taryn-elliott-3889865.jpg");
 	background-size: cover;
+	background-position-x: center;
 }
 
 /* #myCanvas{
@@ -496,4 +503,12 @@ footer {
 
 .colorLabel {
 	scale: 40%;
+}
+
+.dot {
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	/* background-color: #fff; */
+	display: inline-block;
 }
