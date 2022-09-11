@@ -3,6 +3,7 @@
 // let paragraph = document.getElementsByClassName("quote");
 // let button = document.getElementsByClassName("button");
 
+const container = document.getElementById("container");
 const paragraph = document.getElementById("quote");
 const button = document.getElementById("button");
 
@@ -21,10 +22,17 @@ const getQuote = async () => {
 			const quote = jsonQuote[randomNum];
 			console.log(quote);
 
-			paragraph.innerHTML = quote.text;
-			// const addParagraph = document.createElement("p");
-			// const authorName = document.createTextNode(quote.author);
-			// addParagraph.appendChild(authorName);
+			paragraph.innerHTML = `"${quote.text}"`;
+			const authorName = document.createElement("p");
+			if (!quote.author) {
+				authorName.innerText = `—— No author ——`;
+			}
+			else
+				authorName.innerText = `————— ${quote.author} —————`;
+				
+			paragraph.append(authorName);
+
+			button.innerText = "Show Another Quote";
 
 			// return jsonQuote[randomNum];
 		} else throw new Error("Request failed!");
