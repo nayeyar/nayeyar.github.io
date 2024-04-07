@@ -7,7 +7,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,600&display=swap");
 
 * {
-	box-sizing: border-box; /* This new box model avoids the dimensional issues that exist in the former box model you learned about. In this box model, the height and width of the box will remain fixed. The border thickness and padding will be included inside of the box, which means the overall dimensions of the box do not change. border: 1px dotted yellow; */
+	box-sizing: border-box;
+	/* This new box model avoids the dimensional issues that exist in the former box model you learned about. In this box model, the height and width of the box will remain fixed. The border thickness and padding will be included inside of the box, which means the overall dimensions of the box do not change. border: 1px dotted yellow; */
 	margin: 0;
 	padding: 0;
 }
@@ -26,6 +27,7 @@ body {
 	/* lock horizontal scroll oversize navbar */
 	overflow-x: hidden;
 }
+
 /*
 .row {
     border: 1px solid red;
@@ -128,10 +130,12 @@ footer {
 	64% {
 		transform: translate(2px, 0) skew(0deg);
 	}
+
 	4%,
 	60% {
 		transform: translate(-2px, 0) skew(0deg);
 	}
+
 	62% {
 		transform: translate(0, 0) skew(5deg);
 	}
@@ -155,10 +159,12 @@ footer {
 	64% {
 		transform: translate(2px, -2px);
 	}
+
 	4%,
 	60% {
 		transform: translate(-2px, 2px);
 	}
+
 	62% {
 		transform: translate(13px, -1px) skew(-13deg);
 	}
@@ -175,10 +181,12 @@ footer {
 	64% {
 		transform: translate(-2px, 0);
 	}
+
 	4%,
 	60% {
 		transform: translate(-2px, 0);
 	}
+
 	62% {
 		transform: translate(-22px, 5px) skew(21deg);
 	}
@@ -186,6 +194,7 @@ footer {
 
 /* Text Scramble Effect */
 @import "https://fonts.googleapis.com/css?family=Roboto+Mono:100";
+
 /* html, body {font-family 'Roboto Mono', monospace;
     background #212121;
     height 100%;} */
@@ -196,12 +205,14 @@ footer {
 	align-items: center;
 	display: flex;
 }
+
 .text {
 	font-weight: 80;
 	font-size: 15px;
 	color: #fafafa;
 	font-family: "Roboto Mono", monospace;
 }
+
 .dud {
 	color: #757575;
 }
@@ -236,7 +247,7 @@ footer {
 	/*   animation: text 4s 1; */
 	animation-name: text;
 	animation-duration: 3s;
-	animation-iteration-count: 2;
+	animation-iteration-count: 1;
 }
 
 .text2 {
@@ -250,14 +261,17 @@ footer {
 		color: black;
 		margin-bottom: -40px;
 	}
+
 	30% {
 		letter-spacing: 25px;
 		margin-bottom: -40px;
 	}
+
 	85% {
 		letter-spacing: 8px;
 		margin-bottom: -40px;
 	}
+
 	100% {
 		margin-bottom: 10px;
 	}
@@ -268,9 +282,11 @@ footer {
 	transform: rotate(45deg);
 	margin-bottom: 2px;
 }
+
 .fa-globe img {
 	margin-bottom: 2px;
 }
+
 .fa-itsuprt img {
 	transform: rotate(45deg);
 	margin-bottom: 20px;
@@ -281,11 +297,13 @@ footer {
 	font-family: "Roboto", sans-serif;
 	position: relative;
 }
+
 .main-timeline:after {
 	content: "";
 	display: block;
 	clear: both;
 }
+
 .main-timeline:before {
 	content: "";
 	height: 95%;
@@ -296,12 +314,14 @@ footer {
 	left: 50%;
 	top: 30px;
 }
+
 .main-timeline .timeline {
 	width: 50%;
 	padding: 0 35px 0 27px;
 	margin: 0 10px 20px 0;
 	float: left;
 }
+
 .main-timeline .timeline-content {
 	background: linear-gradient(#d9d9d9, #e7e7e7);
 	text-align: center;
@@ -311,9 +331,11 @@ footer {
 	display: block;
 	position: relative;
 }
+
 .main-timeline .timeline-content:hover {
 	text-decoration: none;
 }
+
 .main-timeline .timeline-content:before,
 .main-timeline .timeline-content:after {
 	content: "";
@@ -326,10 +348,12 @@ footer {
 	right: -58px;
 	z-index: 1;
 }
+
 .main-timeline .timeline-content:after {
 	background: #fff;
 	transform: rotate(-45deg) scale(0.6);
 }
+
 .main-timeline .timeline-icon {
 	color: #fff;
 	background: linear-gradient(to right, #617de0, #78b1f8);
@@ -343,9 +367,11 @@ footer {
 	top: 50%;
 	left: -20px;
 }
+
 .main-timeline .timeline-icon i {
 	transform: rotate(45deg);
 }
+
 .main-timeline .timeline-year {
 	color: #fff;
 	background: linear-gradient(to bottom, #617de0, #617de0, #78b1f8);
@@ -360,6 +386,7 @@ footer {
 	right: 0;
 	top: 0;
 }
+
 .main-timeline .timeline-year:after {
 	content: "";
 	background: linear-gradient(to right bottom, #617de0 49%, transparent 50%);
@@ -369,6 +396,7 @@ footer {
 	right: -33px;
 	top: 0;
 }
+
 .main-timeline .title {
 	color: #000;
 	font-size: 20px;
@@ -377,84 +405,104 @@ footer {
 	letter-spacing: 1px;
 	margin: 0 0 7px 0;
 }
+
 .main-timeline .description {
 	color: #333;
 	font-size: 15px;
 	letter-spacing: 1px;
 	margin: 0;
 }
+
 .main-timeline .timeline:nth-child(even) {
 	padding: 0 27px 0 35px;
 	margin: 0 0 20px 10px;
 	float: right;
 }
+
 .main-timeline .timeline:nth-child(even) .timeline-content {
 	padding: 15px 40px 15px 115px;
 }
+
 .main-timeline .timeline:nth-child(even) .timeline-content:before,
 .main-timeline .timeline:nth-child(even) .timeline-content:after {
 	right: auto;
 	left: -58px;
 }
+
 .main-timeline .timeline:nth-child(even) .timeline-icon {
 	left: auto;
 	right: -20px;
 }
+
 .main-timeline .timeline:nth-child(even) .timeline-year {
 	right: auto;
 	left: 0;
 	border-radius: 0 0 0 5px;
 }
+
 .main-timeline .timeline:nth-child(even) .timeline-year:after {
 	transform: rotateY(180deg);
 	right: auto;
 	left: -33px;
 }
+
 .main-timeline .timeline:nth-child(4n + 2) .timeline-content:before,
 .main-timeline .timeline:nth-child(4n + 2) .timeline-icon {
 	background: linear-gradient(to left, #f53b57, #ef5777);
 }
+
 .main-timeline .timeline:nth-child(4n + 2) .timeline-year {
 	background: linear-gradient(to bottom, #f53b57, #f53b57, #ef5777);
 }
+
 .main-timeline .timeline:nth-child(4n + 2) .timeline-year:after {
 	background: linear-gradient(to right bottom, #f53b57 49%, transparent 50%);
 }
+
 .main-timeline .timeline:nth-child(4n + 3) .timeline-content:before,
 .main-timeline .timeline:nth-child(4n + 3) .timeline-icon {
 	background: linear-gradient(to bottom, #227e22, #63a211);
 }
+
 .main-timeline .timeline:nth-child(4n + 3) .timeline-year {
 	background: linear-gradient(to bottom, #227e22, #227e22, #63a211);
 }
+
 .main-timeline .timeline:nth-child(4n + 3) .timeline-year:after {
 	background: linear-gradient(to right bottom, #227e22 49%, transparent 50%);
 }
+
 .main-timeline .timeline:nth-child(4n + 4) .timeline-content:before,
 .main-timeline .timeline:nth-child(4n + 4) .timeline-icon {
 	background: linear-gradient(to left, #7d5ac2, #b493fe);
 }
+
 .main-timeline .timeline:nth-child(4n + 4) .timeline-year {
 	background: linear-gradient(to bottom, #7d5ac2, #7d5ac2, #b493fe);
 }
+
 .main-timeline .timeline:nth-child(4n + 4) .timeline-year:after {
 	background: linear-gradient(to right bottom, #7d5ac2 49%, transparent 50%);
 }
+
 @media screen and (max-width: 767px) {
 	.main-timeline:before {
 		left: 17px;
 		transform: translateX(0);
 	}
+
 	.main-timeline .timeline,
 	.main-timeline .timeline:nth-child(even) {
 		width: 100%;
 		padding: 0 0 27px 40px;
 		margin: 0 0 30px 0;
 	}
+
 	.main-timeline .timeline-content,
 	.main-timeline .timeline:nth-child(even) .timeline-content {
 		padding: 70px 15px 35px 15px;
 	}
+
 	.main-timeline .timeline-content:before,
 	.main-timeline .timeline-content:after,
 	.main-timeline .timeline:nth-child(even) .timeline-content:before,
@@ -465,6 +513,7 @@ footer {
 		right: auto;
 		left: -34px;
 	}
+
 	.main-timeline .timeline-icon,
 	.main-timeline .timeline:nth-child(even) .timeline-icon {
 		transform: translateY(0) translateX(50%) rotate(-45deg);
@@ -473,6 +522,7 @@ footer {
 		top: auto;
 		bottom: -20px;
 	}
+
 	.main-timeline .timeline-year,
 	.main-timeline .timeline:nth-child(even) .timeline-year {
 		width: 100%;
@@ -482,6 +532,7 @@ footer {
 		right: auto;
 		left: 0;
 	}
+
 	.main-timeline .timeline-year:after,
 	.main-timeline .timeline:nth-child(even) .timeline-year:after {
 		height: 20px;
@@ -491,6 +542,7 @@ footer {
 		left: -20px;
 	}
 }
+
 @media screen and (max-width: 576px) {
 	.main-timeline .title {
 		font-size: 18px;

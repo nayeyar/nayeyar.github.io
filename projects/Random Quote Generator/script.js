@@ -26,10 +26,8 @@ const getQuote = async () => {
 			const authorName = document.createElement("p");
 			if (!quote.author) {
 				authorName.innerText = `—— No author ——`;
-			}
-			else
-				authorName.innerText = `————— ${quote.author} —————`;
-				
+			} else authorName.innerText = `————— ${quote.author.split(",")[0]} —————`;
+
 			paragraph.append(authorName);
 
 			button.innerText = "Show Another Quote";

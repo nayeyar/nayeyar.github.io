@@ -1,395 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home</title>
 
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
-		/>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Home</title>
 
-		<!-- Google Font -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css" />
 
-		<link rel="stylesheet" href="resources/css/style.css" />
-		<!-- <link rel="stylesheet" href="projects/bubbletext/bubstyle.css" /> -->
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,600&display=swap"
+		rel="stylesheet">
 
-		<script
-			type="text/javascript"
-			src="https://code.jquery.com/jquery-1.10.2.min.js"
-		></script>
-		<script type="text/javascript" src="projects/bubbletext/alphabet.js"></script>
-	</head>
-	<body>
-		<header>
-			<!--<div class="container-fluid fixed-top">
+	<link rel="stylesheet" href="resources/css/style.css" />
+	<!-- <link rel="stylesheet" href="projects/bubbletext/bubstyle.css" /> -->
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="projects/bubbletext/alphabet.js"></script>
+</head>
+
+<body>
+	<header>
+		<!--<div class="container-fluid fixed-top">
 				<div class="row">
 				</div>
 			</div> container-->
-			<nav
-				class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient fixed-top"
-			>
-				<div class="container-fluid">
-					<!-- <a class="navbar-brand" href="#"
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient fixed-top">
+			<div class="container-fluid">
+				<!-- <a class="navbar-brand" href="#"
 						>NAY<span class="text-danger">A</span></a
 					> -->
-					
-					<div class="texteffectcontainer rounded">
-						<div class="textglitch text-center" title="NAYA">
-							NAY<span class="text-danger">A</span>
-						</div>
-					</div>
-					<button
-						class="navbar-toggler"
-						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarSupportedContent"
-						aria-controls="navbarSupportedContent"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div
-						class="collapse navbar-collapse custom-alignment"
-						id="navbarSupportedContent"
-					>
-						<ul class="navbar-nav me-auto mb-2 mb-lg-0 test-styling">
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="#">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#aboutme">About</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a
-									class="nav-link dropdown-toggle"
-									href="#"
-									id="navbarDropdown"
-									role="button"
-									data-bs-toggle="dropdown"
-									aria-expanded="false"
-								>
-									More
-								</a>
-								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="#projects">Projects</a></li>
-									<!-- <li>
-										<a class="dropdown-item" href="#">Another action</a>
-									</li> -->
-									<li><hr class="dropdown-divider" /></li>
-									<li>
-										<a class="dropdown-item disabled href="test.html"
-											>Missions</a
-										>
-									</li>
-								</ul>
-							</li>
-							<!-- <li class="nav-item">
-								<a class="nav-link disabled">Disabled</a>
-							</li> -->
-						</ul>
+
+				<div class="texteffectcontainer rounded">
+					<div class="textglitch text-center" title="NAYA">
+						NAY<span class="text-danger">A</span>
 					</div>
 				</div>
-			</nav>
-		</header>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse custom-alignment" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0 test-styling">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#aboutme">About</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								More
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="#projects">Projects</a></li>
+								<!-- <li>
+										<a class="dropdown-item" href="#">Another action</a>
+									</li> -->
+								<li>
+									<hr class="dropdown-divider" />
+								</li>
+								<li>
+									<a class="dropdown-item disabled href=" test.html">Missions</a>
+								</li>
+							</ul>
+						</li>
+						<!-- <li class="nav-item">
+								<a class="nav-link disabled">Disabled</a>
+							</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
 
-		<!--Showcase-->
-		<div class="showcase position-relative">
-			<figure class="figure bgvid">
-				<video
-					class="figure-img img-fluid"
-					autoplay
-					loop
-					muted
-					playsinline
-					src="./resources/images/video.mp4"
-				></video>
-				<div
-					class="container portfolioTitle text-center position-absolute top-50 start-50 translate-middle bg-light bg-gradient bg-opacity-10 rounded"
-				>				
-					<!-- <h1 class="text-light">WELCOME</h1> m-1 p-1 mb-1 pb-1-->
-					<!-- <div class="d-flex justify-content-center">
+	<!--Showcase-->
+	<div class="showcase position-relative">
+		<figure class="figure bgvid">
+			<video class="figure-img img-fluid" autoplay loop muted playsinline
+				src="./resources/images/video.mp4"></video>
+			<div
+				class="container portfolioTitle text-center position-absolute top-50 start-50 translate-middle bg-light bg-gradient bg-opacity-10 rounded">
+				<!-- <h1 class="text-light">WELCOME</h1> m-1 p-1 mb-1 pb-1-->
+				<!-- <div class="d-flex justify-content-center">
 						<div class="spinner-border" role="status">
 						<span class="visually-hidden">Loading...</span>
 						</div>
 					</div> -->
-					<a href="#aboutme"><img
-						src="resources/images/profilepic_788x788.png"
-						class="profilePicture position-relative my-1"
-						alt=""
-					/></a>
-					<div class="textscrambleeffect position-relative my-1 bg-dark bg-gradient bg-opacity-50 rounded">
-						<div class="text"></div>
-					</div>
-					<!-- <div class="textscrambleeffect">
+				<a href="#aboutme"><img src="resources/images/profilepic_788x788.png"
+						class="profilePicture position-relative my-1" alt="" /></a>
+				<div class="textscrambleeffect position-relative my-1 bg-dark bg-gradient bg-opacity-50 rounded">
+					<div class="text"></div>
+				</div>
+				<!-- <div class="textscrambleeffect">
 						<div class="text"></div>
 					</div> -->
+			</div>
+
+		</figure>
+		<div class="textscrambleeffect position-relative start-50 translate-middle bg-dark bg-gradient bg-opacity-50">
+			<div class="text"></div>
+		</div>
+	</div>
+
+
+	<!--Timeline-->
+	<section>
+		<div class="container-fluid bg-secondary bg-opacity-50">
+			<div class="textanimation">
+				<span class="text1" id="aboutme"> About Me</span>
+				<span class="text2">Freelance Web & App Development for startups and small businesses.</span>
+			</div>
+			<div class="row">
+
+				<!-- <h2 class="text-center text-light" id="aboutme">About Me</h2> -->
+				<br />
+
+				<div class="main-timeline">
+					<div class="timeline">
+						<a href="#" class="timeline-content">
+							<div class="timeline-icon">
+								<i class="fa fa-dev">
+									<img src="https://img.icons8.com/pastel-glyph/30/000000/code--v2.png" /> </i>
+							</div>
+							<span class="timeline-year">2023-2024</span>
+							<h3 class="title">Full Stack Engineer</h3>
+							<p class="description">
+								Customer experience platform for Verizon microservice backend systems.
+							</p>
+						</a>
+					</div>
+					<div class="timeline">
+						<a href="https://www.schools.nyc.gov/" class="timeline-content" target="_blank">
+							<div class="timeline-icon">
+								<i class="fa fa-globe">
+									<img
+										src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-web-halloween-flatart-icons-outline-flatarticons-1.png" />
+								</i>
+							</div>
+							<span class="timeline-year">2022</span>
+							<h3 class="title">Web Analyst</h3>
+							<p class="description">
+								Manage websites and contents for NYCDOE
+								using multiple CMS.
+							</p>
+						</a>
+					</div>
+					<div class="timeline">
+						<a href="https://infohub.nyced.org/" class="timeline-content" target="_blank">
+							<div class="timeline-icon">
+								<i class="fa fa-globe">
+									<img
+										src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/36/000000/external-system-human-networking-parzival-1997-outline-color-parzival-1997.png" />
+								</i>
+							</div>
+							<span class="timeline-year">2021</span>
+							<h3 class="title">System Analyst</h3>
+							<p class="description">
+								Analysis and Desisgn technique to solve problems for the NYCDOE Systems.
+							</p>
+						</a>
+					</div>
+					<div class="timeline">
+						<a href="https://infohub.nyced.org/working-with-the-doe/current-employees/diit-help-desk"
+							class="timeline-content" target="_blank">
+							<div class="timeline-icon">
+								<i class="fa fa-itsuprt">
+									<img src="https://img.icons8.com/carbon-copy/45/000000/customer-support.png" />
+								</i>
+							</div>
+							<span class="timeline-year">2020</span>
+							<h3 class="title">Tech Support</h3>
+							<p class="description">
+								Experienced technicle support with CRM and other ticketing systems for the NYCDOE.
+							</p>
+						</a>
+					</div>
 				</div>
-				
-			</figure>
-			<div class="textscrambleeffect position-relative start-50 translate-middle bg-dark bg-gradient bg-opacity-50">
-				<div class="text"></div>
 			</div>
 		</div>
-		
-		
-		<!--Timeline-->
-		<section>
-			<div class="container-fluid bg-secondary bg-opacity-50">
+		</div>
+	</section>
+	<br>
+
+	<section>
+		<div class="container-fluid">
+			<div class="row skillicons align-items-center text-center">
 				<div class="textanimation">
-					<span class="text1" id="aboutme"> About Me</span>
-					<span class="text2"> Explore Here </span>
+					<span class="text1" id="aboutme"> Skills </span>
+					<span class="text2"> And More </span>
 				</div>
-				<div class="row">
-					
-					<!-- <h2 class="text-center text-light" id="aboutme">About Me</h2> -->
-					<br />
-					
-						<div class="main-timeline">
-							<div class="timeline">
-								<a href="#" class="timeline-content">
-									<div class="timeline-icon">
-										<i class="fa fa-dev">
-											<img src="https://img.icons8.com/pastel-glyph/30/000000/code--v2.png"/>										</i>
-									</div>
-									<span class="timeline-year">2022</span>
-									<h3 class="title">Freelance</h3>
-									<p class="description">
-										Web & App Development for startups, small businesses and productions.
-									</p>
-								</a>
-							</div>
-							<div class="timeline">
-								<a href="https://www.schools.nyc.gov/" class="timeline-content" target="_blank">
-									<div class="timeline-icon">
-										<i class="fa fa-globe">
-											<img
-												src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/36/000000/external-system-human-networking-parzival-1997-outline-color-parzival-1997.png"
-											/>
-										</i>
-									</div>
-									<span class="timeline-year">2022</span>
-									<h3 class="title">Programmer Analyst</h3>
-									<p class="description">
-										Analysis and Desisgn technique to solve problems for the NYCDOE Systems.
-									</p>
-								</a>
-							</div>
-							<div class="timeline">
-								<a href="https://infohub.nyced.org/" class="timeline-content" target="_blank">
-									<div class="timeline-icon">
-										<i class="fa fa-globe">
-											<img
-												src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/40/000000/external-web-halloween-flatart-icons-outline-flatarticons-1.png"
-											/>
-										</i>
-									</div>
-									<span class="timeline-year">2021</span>
-									<h3 class="title">Web Analyst</h3>
-									<p class="description">
-										Manage websites and contents for NYCDOE
-										using multiple CMS.
-									</p>
-								</a>
-							</div>
-							<div class="timeline">
-								<a href="https://infohub.nyced.org/working-with-the-doe/current-employees/diit-help-desk" class="timeline-content" target="_blank">
-									<div class="timeline-icon">
-										<i class="fa fa-itsuprt">
-											<img
-												src="https://img.icons8.com/carbon-copy/45/000000/customer-support.png"
-											/>
-										</i>
-									</div>
-									<span class="timeline-year">2020</span>
-									<h3 class="title">Tech Support</h3>
-									<p class="description">
-										Experienced technicle support with CRM and other ticketing systems for the NYCDOE.
-									</p>
-								</a>
-							</div>
-						</div>
-					</div>
+				<div class="col">
+					<img
+						src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/000000/external-linux-a-family-of-open-source-unix-like-operating-systems-based-on-the-linux-kernel-logo-color-tal-revivo.png" />
+					<p>UNIX</p>
 				</div>
-			</div>
-		</section>
-		<br>
-
-		<section>
-			<div class="container-fluid">
-				<div class="row skillicons align-items-center text-center">
-					<div class="textanimation">
-						<span class="text1" id="aboutme"> Skills </span>
-						<span class="text2"> And More </span>
-					</div>
-					<div class="col">
-						<img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/000000/external-linux-a-family-of-open-source-unix-like-operating-systems-based-on-the-linux-kernel-logo-color-tal-revivo.png"/>
-						<p>UNIX</p>
-					</div>
-					<div class="col">
-						<img src="resources/icons/icons8-python.gif" alt="" style="width: 96px;">
-						<p>Python</p>
-					</div>
-					<div class="col">
-						<img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/000000/external-cplusplus-a-general-purpose-descriptive-programming-computer-language-logo-color-tal-revivo.png"/>
-						<p>C++</p>
-					</div>
-					<div class="col">
-						<img src="resources/icons/icons8-java.gif" alt="" style="width: 96px;">
-						<p>Java</p>
-					</div>
-					<div class="col">
-						<img src="https://img.icons8.com/office/96/000000/spring-logo.png"/>
-						<p>Spring</p>
-					</div>
-					<div class="col">
-						<img src="resources/icons/icons8-javascript.gif" alt="" style="width: 96px;">
-						<p>JavaScript</p>
-					</div>
-					<div class="col">
-						<img src="https://img.icons8.com/color/96/000000/nodejs.png"/>
-						<p>Nodejs</p>
-					</div>
-					<div class="col">
-						<img src="resources/icons/icons8-react.gif" alt="" style="width: 96px;">
-						<p>React</p>
-					</div>
-					<div class="col">
-						<img src="https://img.icons8.com/color/96/000000/mysql-logo.png"/>
-						<p>MySQL</p>
-					</div>
-					<div class="col">
-						<img src="https://img.icons8.com/color/96/000000/postgreesql.png"/>
-						<p>PostgreSQL</p>
-					</div>
-					<div class="col">
-						<img src="resources/icons/icons8-github.gif" alt="" style="width: 96px;">
-						<p>Git</p>
-					</div>
-					<div class="col">
-						<img src="https://img.icons8.com/color/96/000000/docker.png"/>
-						<p>Docker</p>
-					</div>
-					
+				<div class="col">
+					<img src="resources/icons/icons8-python.gif" alt="" style="width: 96px;">
+					<p>Python</p>
 				</div>
+				<div class="col">
+					<img
+						src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/000000/external-cplusplus-a-general-purpose-descriptive-programming-computer-language-logo-color-tal-revivo.png" />
+					<p>C++</p>
+				</div>
+				<div class="col">
+					<img src="resources/icons/icons8-java.gif" alt="" style="width: 96px;">
+					<p>Java</p>
+				</div>
+				<div class="col">
+					<img src="https://img.icons8.com/office/96/000000/spring-logo.png" />
+					<p>Spring</p>
+				</div>
+				<div class="col">
+					<img src="resources/icons/icons8-javascript.gif" alt="" style="width: 96px;">
+					<p>JavaScript</p>
+				</div>
+				<div class="col">
+					<img src="https://img.icons8.com/color/96/000000/nodejs.png" />
+					<p>Nodejs</p>
+				</div>
+				<div class="col">
+					<img src="resources/icons/icons8-react.gif" alt="" style="width: 96px;">
+					<p>React</p>
+				</div>
+				<div class="col">
+					<img src="https://img.icons8.com/color/96/000000/mysql-logo.png" />
+					<p>MySQL</p>
+				</div>
+				<div class="col">
+					<img src="https://img.icons8.com/color/96/000000/postgreesql.png" />
+					<p>PostgreSQL</p>
+				</div>
+				<div class="col">
+					<img src="resources/icons/icons8-github.gif" alt="" style="width: 96px;">
+					<p>Git</p>
+				</div>
+				<div class="col">
+					<img src="https://img.icons8.com/color/96/000000/docker.png" />
+					<p>Docker</p>
+				</div>
+
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<!--Projects-->
-		<section id="projects">
-			<div class="textanimation">
-				<span class="text1" id="aboutme"> Projects </span>
-				<span class="text2"> More Coming Soon </span>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="card mb-2" style="width: 18rem">
-							<img
-								src="projects/Random Quote Generator/will-van-wingerden-cZVthlrnlnQ-unsplash.jpg"
-								class="card-img-top"
-								alt="..."
-							/>
-							<div class="card-body">
-								<h5 class="card-title">Random Quote Generator</h5>
-								<p class="card-text">
-									Generate random quote using an API.
-								</p>
+	<!--Projects-->
+	<section id="projects">
+		<div class="textanimation">
+			<span class="text1" id="aboutme"> Projects </span>
+			<span class="text2"> More Coming Soon </span>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="card" style="width: 18rem">
+						<img src="projects/Random Quote Generator/will-van-wingerden-cZVthlrnlnQ-unsplash.jpg"
+							class="card-img-top" alt="..." />
+						<div class="card-body">
+							<h5 class="card-title">Random Quote Generator</h5>
+							<p class="card-text">
+								Generate random quote using an API.
+							</p>
 
-								<div class="progress-container">
-									
-									<div class="progress">
-										<div class="progress-bar bg-info" role="progressbar" aria-label="Segment one" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-										<div class="progress-bar" role="progressbar" aria-label="Segment two" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-										<div class="progress-bar bg-warning" role="progressbar" aria-label="Segment three" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+							<div class="progress-container">
+
+								<div class="progress">
+									<div class="progress-bar bg-danger" role="progressbar" aria-label="Segment one"
+										style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%
 									</div>
-
-									<div class="text-center">
-										<span class="dot bg-info"></span>
-										<span>HTML</span>
-										
-										<span class="dot bg-primary"></span>
-										<span>CSS</span>
-
-										<span class="dot bg-warning"></span>
-										<span>JavaScript</span>
+									<div class="progress-bar" role="progressbar" aria-label="Segment two"
+										style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%
 									</div>
-									
+									<div class="progress-bar bg-warning" role="progressbar" aria-label="Segment three"
+										style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%
+									</div>
 								</div>
-								<br>
-								<a
-									href="projects/Random Quote Generator/index.html"
-									class="btn btn-primary"
-									>View</a
-								>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card mb-2" style="width: 18rem">
-							<img
-								src="https://www.business.com/images/rev/prod/54_774_Inventory_Software.jpg"
-								class="card-img-top"
-								alt="..."
-							/>
-							<div class="card-body">
-								<h5 class="card-title">Inventory Manager</h5>
-								<p class="card-text">
-									Inventory management system to manage any kind of product for your business. Built with Spring Boot Framework and MySQL database.
-									Can also be configured to integrate with any RDBMS.
-								</p>
 
-								<div class="progress-container">
-									
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" aria-label="Segment one" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-										<div class="progress-bar bg-warning" role="progressbar" aria-label="Segment two" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-										<div class="progress-bar bg-danger" role="progressbar" aria-label="Segment three" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
-									</div>
+								<div class="text-center">
+									<span class="dot bg-danger"></span>
+									<span>HTML</span>
 
-									<div class="text-center">
-										<span class="dot bg-primary"></span>
-										<span>HTML/CSS</span>
-										
-										<span class="dot bg-warning"></span>
-										<span>JavaScript</span>
+									<span class="dot bg-primary"></span>
+									<span>CSS</span>
 
-										<span class="dot bg-danger"></span>
-										<span>Java</span>
-									</div>
-									
+									<span class="dot bg-warning"></span>
+									<span>JavaScript</span>
 								</div>
-								<br>
-								<a
-									href="https://github.com/nayeyar/inventory-manager.git"
-									class="btn btn-primary"
-									target="_blank"
-									>View</a
-								>
+
 							</div>
+							<br>
+							<a href="projects/Random Quote Generator/index.html" class="btn btn-primary">View</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<br />
+	<br />
 
-		<!-- <div class="container container-fluid">
+	<!-- <div class="container container-fluid">
 			<div class="row align-items-center justify-contents-center">
 				<div class="col">
 					<figure class="figure bubCanvas">
@@ -399,148 +323,95 @@
 			</div>
 		</div> -->
 
-		<figure class="figure bubCanvas">
-			<canvas class="figure-img img-fluid" id="myCanvas"></canvas>
-		</figure>
+	<figure class="figure bubCanvas">
+		<canvas class="figure-img img-fluid" id="myCanvas"></canvas>
+	</figure>
 
-		<footer>
-			<ul class="nav justify-content-center fixed-bottom bg-dark bg-gradient">
-				<li class="nav-item">
-					<a
-						class="nav-link"
-						aria-current="page"
-						href="#"
-						target="#"
-					>
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
-						<path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+	<footer>
+		<ul class="nav justify-content-center fixed-bottom bg-dark bg-gradient">
+			<li class="nav-item">
+				<a class="nav-link" aria-current="page" href="#" target="#">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-globe" viewBox="0 0 16 16">
+						<path
+							d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z" />
 					</svg>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a
-						class="nav-link"
-						href="mailto:nayayeyar2230@gmail.com"
-						target="_blank"
-					>
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-						<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="mailto:nayayeyar2230@gmail.com" target="_blank">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-envelope" viewBox="0 0 16 16">
+						<path
+							d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
 					</svg>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a
-						class="nav-link"
-						href="https://www.linkedin.com/in/nay-ayeyar-8622b11a4"
-						target="_blank"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							class="bi bi-linkedin"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
-							/>
-						</svg>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="https://github.com/nayeyar" target="_blank">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							class="bi bi-github"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-							/>
-						</svg>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							class="bi bi-discord"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"
-							/>
-						</svg>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							class="bi bi-reddit"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M6.167 8a.831.831 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661zm1.843 3.647c.315 0 1.403-.038 1.976-.611a.232.232 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83.458 0 .83-.381.83-.83a.831.831 0 0 0-1.66 0z"
-							/>
-							<path
-								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.203.203 0 0 0-.153.028.186.186 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224c-.02.115-.029.23-.029.353 0 1.795 2.091 3.256 4.669 3.256 2.577 0 4.668-1.451 4.668-3.256 0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165z"
-							/>
-						</svg>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="#">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							class="bi bi-youtube"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
-							/>
-						</svg>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="16"
-							height="16"
-							fill="currentColor"
-							class="bi bi-twitter"
-							viewBox="0 0 16 16"
-						>
-							<path
-								d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-							/>
-						</svg>
-					</a>
-				</li>
-			</ul>
-		</footer>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="https://www.linkedin.com/in/nay-ayeyar-8622b11a4" target="_blank">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-linkedin" viewBox="0 0 16 16">
+						<path
+							d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+					</svg>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="https://github.com/nayeyar" target="_blank">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-github" viewBox="0 0 16 16">
+						<path
+							d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+					</svg>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-discord" viewBox="0 0 16 16">
+						<path
+							d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
+					</svg>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-reddit" viewBox="0 0 16 16">
+						<path
+							d="M6.167 8a.831.831 0 0 0-.83.83c0 .459.372.84.83.831a.831.831 0 0 0 0-1.661zm1.843 3.647c.315 0 1.403-.038 1.976-.611a.232.232 0 0 0 0-.306.213.213 0 0 0-.306 0c-.353.363-1.126.487-1.67.487-.545 0-1.308-.124-1.671-.487a.213.213 0 0 0-.306 0 .213.213 0 0 0 0 .306c.564.563 1.652.61 1.977.61zm.992-2.807c0 .458.373.83.831.83.458 0 .83-.381.83-.83a.831.831 0 0 0-1.66 0z" />
+						<path
+							d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.828-1.165c-.315 0-.602.124-.812.325-.801-.573-1.9-.945-3.121-.993l.534-2.501 1.738.372a.83.83 0 1 0 .83-.869.83.83 0 0 0-.744.468l-1.938-.41a.203.203 0 0 0-.153.028.186.186 0 0 0-.086.134l-.592 2.788c-1.24.038-2.358.41-3.17.992-.21-.2-.496-.324-.81-.324a1.163 1.163 0 0 0-.478 2.224c-.02.115-.029.23-.029.353 0 1.795 2.091 3.256 4.669 3.256 2.577 0 4.668-1.451 4.668-3.256 0-.114-.01-.238-.029-.353.401-.181.688-.592.688-1.069 0-.65-.525-1.165-1.165-1.165z" />
+					</svg>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-youtube" viewBox="0 0 16 16">
+						<path
+							d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+					</svg>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+						class="bi bi-twitter" viewBox="0 0 16 16">
+						<path
+							d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+					</svg>
+				</a>
+			</li>
+		</ul>
+	</footer>
 
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-			crossorigin="anonymous"
-		></script>
-		<script src="resources/script/textScramble.js"></script>
-		<script type="text/javascript" src="projects/bubbletext/bubbles.js"></script>
-		<script type="text/javascript" src="projects/bubbletext/bubindex.js"></script>
-	</body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+		crossorigin="anonymous"></script>
+	<script src="resources/script/textScramble.js"></script>
+	<script type="text/javascript" src="projects/bubbletext/bubbles.js"></script>
+	<script type="text/javascript" src="projects/bubbletext/bubindex.js"></script>
+</body>
+
 </html>
