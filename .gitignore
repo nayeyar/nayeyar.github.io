@@ -1,2 +1,12 @@
-.DS_Store
+.env
+
+node_modules
+
+.codex/
+.cursor/
+
 .vscode
+.DS_Store
+.next/
+build.log
+tsconfig.tsbuildinfo
