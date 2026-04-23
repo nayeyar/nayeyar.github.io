@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
+import { BrandLogo } from "@/components/brand-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -21,11 +22,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-4 z-50 mx-auto w-[min(1120px,calc(100%-1.5rem))]">
       <div className="light-glass flex items-center justify-between rounded-full border border-white/15 px-4 py-3 shadow-[0_24px_80px_rgba(15,23,42,0.16)] backdrop-blur-2xl">
-        <Link href="/" className="flex items-center gap-2 text-sm font-semibold tracking-[0.28em] text-[var(--foreground)]">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--accent)]/15 text-[var(--accent)]">
-            NA
-          </span>
-          NAY<span className="text-[var(--accent)]">A</span>
+        <Link
+          href="/"
+          className="flex items-center gap-3 text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+        >
+          <BrandLogo className="h-11 w-11 shrink-0 rounded-xl" />
+          <span className="text-lg font-semibold tracking-[0.1em] md:text-xl">Nay Ayeyar</span>
         </Link>
         <nav className="hidden items-center gap-2 md:flex">
           {navItems.map((item) => (
