@@ -386,7 +386,7 @@ export function getPortfolioContent(): PortfolioContent {
     ],
     contact: {
       videoSrc: "/resources/images/video.mp4",
-      bookingUrl: "#booking-link",
+      bookingUrl: "https://calendly.com/nayayeyar2230/30min",
       bookingLabel: "Reserve a Strategy Call",
       blurb:
         "For consulting, freelance build work, and AI product collaboration, start with a booking request or reach out directly.",
