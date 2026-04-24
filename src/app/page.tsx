@@ -8,12 +8,13 @@ import { SiteHeader } from "@/components/site-header";
 import { SkillsMarquee } from "@/components/skills-marquee";
 import { TextScramble } from "@/components/text-scramble";
 import { getPortfolioContent } from "@/lib/site-content";
+import { cn } from "@/lib/utils";
 
 const content = getPortfolioContent();
 
 export default function HomePage() {
   return (
-    <div className="pb-20 pt-4">
+    <div className="overflow-x-hidden pb-20 pt-4">
       <SiteHeader />
       <main className="mx-auto mt-10 flex w-[min(1120px,calc(100%-1.5rem))] flex-col gap-8 md:mt-12">
         <MotionReveal>
@@ -39,14 +40,6 @@ export default function HomePage() {
               >
                 <CalendarDays className="h-4 w-4" />
                 {content.hero.primaryCta.label}
-              </Link>
-              <Link
-                href={content.hero.secondaryCta.href}
-                target="_blank"
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-semibold text-[var(--foreground)] transition hover:bg-white/15"
-              >
-                <Github className="h-4 w-4" />
-                {content.hero.secondaryCta.label}
               </Link>
             </div>
           </section>
@@ -137,7 +130,7 @@ export default function HomePage() {
             </div>
           </MotionReveal>
           <MotionReveal delay={0.05}>
-            <div className="relative left-1/2 right-1/2 mt-2 w-screen -translate-x-1/2 overflow-visible">
+            <div className="relative left-1/2 right-1/2 mt-2 -ml-[50vw] -mr-[50vw] w-screen max-w-none overflow-visible">
               <SkillsMarquee skills={content.skills} />
             </div>
           </MotionReveal>
@@ -156,36 +149,69 @@ export default function HomePage() {
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em] md:text-4xl">Selected work and experiments.</h2>
           </MotionReveal>
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
-            {content.projects.map((project, index) => (
-              <MotionReveal
-                key={project.name}
-                delay={index * 0.08}
-                className="group rounded-[1.75rem] border border-white/10 bg-[var(--panel-strong)] p-6 transition hover:border-[var(--accent)]/35"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold">{project.name}</h3>
-                    <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--muted-strong)]">{project.description}</p>
+            {content.projects.map((project, index) => {
+              const isProjectExternal = project.href.startsWith("http");
+              const derivedRepoHref =
+                project.repoHref ?? (project.href.includes("github.com/") ? project.href : undefined);
+              const isRepoExternal = Boolean(derivedRepoHref && derivedRepoHref.startsWith("http"));
+              const showProjectButton = project.href !== derivedRepoHref;
+
+              return (
+                <MotionReveal
+                  key={project.name}
+                  delay={index * 0.08}
+                  className="group rounded-[1.75rem] border border-white/10 bg-[var(--panel-strong)] p-6 transition hover:border-[var(--accent)]/35"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl font-semibold">{project.name}</h3>
+                      <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--muted-strong)]">
+                        {project.description}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {showProjectButton ? (
+                        <Link
+                          href={project.href}
+                          target={isProjectExternal ? "_blank" : undefined}
+                          rel={isProjectExternal ? "noreferrer" : undefined}
+                          aria-label={`Open ${project.name} project`}
+                          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/10 transition group-hover:border-[var(--accent)] group-hover:text-[var(--accent)]"
+                        >
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      ) : null}
+                      {derivedRepoHref ? (
+                        <Link
+                          href={derivedRepoHref}
+                          target={isRepoExternal ? "_blank" : undefined}
+                          rel={isRepoExternal ? "noreferrer" : undefined}
+                          aria-label={`Open ${project.name} repository`}
+                          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/10 transition group-hover:border-[var(--accent)] group-hover:text-[var(--accent)]"
+                        >
+                          <Github className="h-4 w-4" />
+                        </Link>
+                      ) : null}
+                    </div>
                   </div>
-                  <Link
-                    href={project.href}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/10 transition group-hover:border-[var(--accent)] group-hover:text-[var(--accent)]"
+                  <div
+                    className={cn(
+                      "mt-6 flex flex-wrap gap-2",
+                      project.maxTagRows === 2 ? "max-h-[4.5rem] overflow-hidden" : "",
+                    )}
                   >
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--muted-strong)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </MotionReveal>
-            ))}
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--muted-strong)]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </MotionReveal>
+              );
+            })}
           </div>
         </section>
 
@@ -200,7 +226,7 @@ export default function HomePage() {
             href="/contact"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
           >
-            Go to contact page
+            Contact Me
             <ArrowRight className="h-4 w-4" />
           </Link>
         </MotionReveal>

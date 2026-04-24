@@ -7,6 +7,7 @@ const ASCII_CHARS = [".", "+", "*", ":", "=", "~", "#", "%"];
 export function AsciiBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pointerRef = useRef({ x: 0.5, y: 0.5, active: false });
+  const viewportRef = useRef({ width: 1, height: 1 });
   const drawRef = useRef<(time: number) => void>(() => {});
 
   const prefersReducedMotion = useMemo(
@@ -33,6 +34,13 @@ export function AsciiBackground() {
     context.font = "14px var(--font-mono)";
     context.textBaseline = "top";
 
+    const isDark = document.documentElement.classList.contains("dark");
+    const inkColor = isDark ? "255, 255, 255" : "0, 0, 0";
+    const minAlpha = isDark ? 0.16 : 0.12;
+    const maxAlpha = isDark ? 0.5 : 0.34;
+    const baseAlpha = isDark ? 0.22 : 0.16;
+    const alphaWeight = isDark ? 0.05 : 0.04;
+
     const columns = Math.ceil(width / 18);
     const rows = Math.ceil(height / 18);
     const wave = time / 900;
@@ -43,13 +51,21 @@ export function AsciiBackground() {
         const dy = pointerRef.current.y * rows - y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const ripple = Math.sin(x * 0.55 + wave) + Math.cos(y * 0.48 + wave * 1.2);
-        const pointerBoost = pointerRef.current.active ? Math.max(0, 4 - distance) : 0;
+        const pointerRadius = pointerRef.current.active ? 9 : 5;
+        const pointerInfluence = Math.max(0, 1 - distance / pointerRadius);
+        const pointerPulse = Math.sin(distance * 1.6 - time / 220) * pointerInfluence;
+        const pointerBoost = pointerRef.current.active ? pointerInfluence * 2.2 + pointerPulse * 1.1 : 0;
         const intensity = ripple + pointerBoost;
         const character =
           ASCII_CHARS[Math.abs(Math.round(intensity * 1.5)) % ASCII_CHARS.length] ?? ".";
-        const alpha = prefersReducedMotion ? 0.08 : Math.max(0.08, Math.min(0.28, 0.12 + intensity * 0.03));
+        const alpha = prefersReducedMotion
+          ? minAlpha
+          : Math.max(
+              minAlpha,
+              Math.min(maxAlpha, baseAlpha + intensity * alphaWeight + pointerInfluence * 0.18),
+            );
 
-        context.fillStyle = `color-mix(in oklab, var(--accent) ${Math.round(alpha * 100)}%, transparent)`;
+        context.fillStyle = `rgba(${inkColor}, ${alpha})`;
         context.fillText(character, x * 18, y * 18);
       }
     }
@@ -62,11 +78,14 @@ export function AsciiBackground() {
     }
 
     const resize = () => {
-      const { innerWidth, innerHeight, devicePixelRatio } = window;
-      canvas.width = innerWidth * devicePixelRatio;
-      canvas.height = innerHeight * devicePixelRatio;
-      canvas.style.width = `${innerWidth}px`;
-      canvas.style.height = `${innerHeight}px`;
+      const width = document.documentElement.clientWidth;
+      const height = document.documentElement.clientHeight;
+      const { devicePixelRatio } = window;
+      viewportRef.current = { width, height };
+      canvas.width = width * devicePixelRatio;
+      canvas.height = height * devicePixelRatio;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
       const context = canvas.getContext("2d");
       context?.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
     };
@@ -87,9 +106,10 @@ export function AsciiBackground() {
     }
 
     const handleMove = (event: PointerEvent) => {
+      const { width, height } = viewportRef.current;
       pointerRef.current = {
-        x: event.clientX / window.innerWidth,
-        y: event.clientY / window.innerHeight,
+        x: event.clientX / width,
+        y: event.clientY / height,
         active: true,
       };
     };
@@ -98,12 +118,23 @@ export function AsciiBackground() {
       pointerRef.current.active = false;
     };
 
+    const handleThemeChange = () => {
+      drawRef.current(performance.now());
+    };
+
+    const themeObserver = new MutationObserver(handleThemeChange);
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class", "style"],
+    });
+
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", handleMove);
     window.addEventListener("pointerleave", handleLeave);
 
     return () => {
       window.cancelAnimationFrame(frameId);
+      themeObserver.disconnect();
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", handleMove);
       window.removeEventListener("pointerleave", handleLeave);

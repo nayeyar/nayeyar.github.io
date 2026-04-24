@@ -43,7 +43,9 @@ export type PortfolioContent = {
     name: string;
     description: string;
     href: string;
+    repoHref?: string;
     tags: string[];
+    maxTagRows?: 1 | 2;
   }>;
   contact: {
     videoSrc: string;
@@ -339,6 +341,35 @@ export function getPortfolioContent(): PortfolioContent {
     ],
     projects: [
       {
+        name: "DashFlow",
+        description:
+          "A team task workspace for coordinating work across workspace, project, and task layers with deployment-ready backend operations.",
+        href: "https://dashflow-lac.vercel.app/",
+        repoHref: "https://github.com/Nomad-Agent/dashflow",
+        tags: [
+          "FastAPI",
+          "TypeScript",
+          "Docker",
+          "Container Hardening",
+          "Startup Migrations"
+        ],
+        maxTagRows: 2,
+      },
+      {
+        name: "LogiMesh",
+        description:
+          "A logistics integration platform centered on event-driven backend flows, service reliability, and operational visibility.",
+        href: "https://logimesh.vercel.app/",
+        repoHref: "https://github.com/nayeyar/logimesh",
+        tags: [
+          "Event-Driven System",
+          "RabbitMQ",
+          "Workflow Orchestration",
+          "Ansible"
+        ],
+        maxTagRows: 2,
+      },
+      {
         name: "Random Quote Generator",
         description:
           "A lightweight frontend app that fetches and presents quotes through a clean interaction loop.",
@@ -349,7 +380,7 @@ export function getPortfolioContent(): PortfolioContent {
         name: "Portfolio Rebuild",
         description:
           "A redesign system focused on performance, motion, theming, and reusable content architecture.",
-        href: "/",
+        href: "https://github.com/nayeyar/nayeyar.github.io",
         tags: ["Next.js", "Tailwind", "Motion"],
       },
     ],

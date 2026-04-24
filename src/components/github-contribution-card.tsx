@@ -33,7 +33,7 @@ export function GitHubContributionCard({
           className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/25 bg-[var(--accent)]/10 px-5 py-3 text-sm font-medium text-[var(--accent)] transition hover:bg-[var(--accent)] hover:text-white"
         >
           <Github className="h-4 w-4" />
-          Visit GitHub
+          View GitHub
           <ArrowUpRight className="h-4 w-4" />
         </Link>
       </div>

@@ -24,9 +24,15 @@ export function SiteHeader() {
       <div className="light-glass flex items-center justify-between rounded-full border border-white/15 px-4 py-3 shadow-[0_24px_80px_rgba(15,23,42,0.16)] backdrop-blur-2xl">
         <Link
           href="/"
-          className="flex items-center gap-3 text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
+          className="group flex items-center gap-3 text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
         >
-          <BrandLogo className="h-11 w-11 shrink-0 rounded-xl" />
+          <span className="relative inline-flex h-12 w-12 items-center justify-center">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -inset-2 rounded-full bg-[#00FF41]/30 blur-xl opacity-0 transition duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+            />
+            <BrandLogo className="relative h-11 w-11 shrink-0 rounded-xl transition duration-300 group-hover:scale-105 group-focus-visible:scale-105" />
+          </span>
           <span className="text-lg font-semibold tracking-[0.1em] md:text-xl">Nay Ayeyar</span>
         </Link>
         <nav className="hidden items-center gap-2 md:flex">

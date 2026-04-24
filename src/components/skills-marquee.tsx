@@ -260,7 +260,7 @@ export function SkillsMarquee({ skills }: SkillsMarqueeProps) {
         <div className="skills-marquee-edge skills-marquee-edge-right" />
         <div
           ref={shellRef}
-          className="skills-marquee overflow-x-auto px-4 py-6 [scrollbar-width:none] [-ms-overflow-style:none] md:px-8"
+          className="skills-marquee overflow-x-auto py-6 [scrollbar-width:none] [-ms-overflow-style:none]"
           onPointerEnter={() => {
             setIsHovered(true);
             clearCloseTimer();
@@ -285,13 +285,24 @@ export function SkillsMarquee({ skills }: SkillsMarqueeProps) {
                     hasIcon
                       ? "border border-transparent bg-transparent hover:bg-transparent"
                       : "border border-white/12 bg-white/8 hover:border-[var(--accent)] hover:bg-white/14"
-                  } ${isActive ? "ring-2 ring-[var(--accent)]/70" : ""}`}
+                  }`}
                   onClick={(event) => openPopover(id, skill, event.currentTarget)}
                   onFocus={(event) => openPopover(id, skill, event.currentTarget)}
                   onBlur={scheduleClosePopover}
                   onPointerEnter={(event) => openPopover(id, skill, event.currentTarget)}
                   onPointerLeave={scheduleClosePopover}
                 >
+                  <span
+                    aria-hidden
+                    className={`pointer-events-none absolute -inset-1 rounded-full blur-lg transition duration-300 ${
+                      isActive
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
+                    }`}
+                    style={{
+                      background: "color-mix(in oklab, var(--accent) 40%, transparent)",
+                    }}
+                  />
                   {skill.iconSrc ? (
                     <img
                       src={skill.iconSrc}
@@ -299,18 +310,18 @@ export function SkillsMarquee({ skills }: SkillsMarqueeProps) {
                       width={56}
                       height={56}
                       loading="lazy"
-                      className={`h-12 w-12 object-contain transition duration-200 ease-out md:h-14 md:w-14 ${
+                      className={`relative h-12 w-12 object-contain transition duration-300 ease-out md:h-14 md:w-14 ${
                         isActive
-                          ? "scale-110 drop-shadow-[0_8px_20px_rgba(37,99,235,0.28)]"
-                          : "scale-100 group-hover:scale-110 group-focus-visible:scale-110"
+                          ? "scale-[1.24]"
+                          : "scale-100 group-hover:scale-[1.24] group-focus-visible:scale-[1.24]"
                       }`}
                     />
                   ) : (
                     <span
-                      className={`font-mono text-xl font-semibold uppercase tracking-[0.18em] text-[var(--accent)] transition duration-200 ease-out md:text-2xl ${
+                      className={`relative font-mono text-xl font-semibold uppercase tracking-[0.18em] text-[var(--accent)] transition duration-300 ease-out md:text-2xl ${
                         isActive
-                          ? "scale-110"
-                          : "scale-100 group-hover:scale-110 group-focus-visible:scale-110"
+                          ? "scale-[1.24]"
+                          : "scale-100 group-hover:scale-[1.24] group-focus-visible:scale-[1.24]"
                       }`}
                     >
                       {skill.badge}
