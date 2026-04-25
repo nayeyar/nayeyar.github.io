@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { handler } from "./inquiry";
+import { handler } from "../../netlify/functions/inquiry";
 
 describe("Netlify inquiry handler", () => {
   afterEach(() => {
