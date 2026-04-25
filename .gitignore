@@ -1,2 +1,16 @@
+.env
+
+AGENTS.md
+CONTEXT.md
+.codex/
+.cursor/
+
+node_modules/
+.next/
+coverage/
+out/
+build.log
+tsconfig.tsbuildinfo
+
+.vscode/
 .DS_Store
-.vscode
