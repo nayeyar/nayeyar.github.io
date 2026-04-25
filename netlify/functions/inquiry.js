@@ -120,8 +120,20 @@ export async function handler(event) {
     return json(400, { error: "Invalid inquiry fields." }, origin, allowedOrigins);
   }
 
-  const to = process.env.INQUIRY_TO_EMAIL || "nayayeyar2230@gmail.com";
-  const from = process.env.INQUIRY_FROM_EMAIL || "Portfolio Inquiry <onboarding@resend.dev>";
+  const to = process.env.INQUIRY_TO_EMAIL?.trim();
+  const from = process.env.INQUIRY_FROM_EMAIL?.trim() || "Portfolio Inquiry <onboarding@resend.dev>";
+
+  if (!to) {
+    return json(
+      503,
+      {
+        error:
+          "Inquiry service is not configured. Set INQUIRY_TO_EMAIL on the server to enable submissions.",
+      },
+      origin,
+      allowedOrigins,
+    );
+  }
 
   const subject = `Project inquiry from ${inquiry.name}`;
   const text = [
