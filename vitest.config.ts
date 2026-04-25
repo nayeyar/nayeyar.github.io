@@ -11,7 +11,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       include: ["src/**/*.{ts,tsx}", "netlify/functions/**/*.js"],
-      exclude: ["src/**/*.test.*", "src/**/*.spec.*"],
+      exclude: ["src/**/*.test.*", "src/**/*.spec.*", "tests/**/*.test.*", "tests/**/*.spec.*"],
       reporter: ["text", "html", "json-summary"],
     },
   },
