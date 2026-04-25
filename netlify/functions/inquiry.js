@@ -1,16 +1,48 @@
-import { NextResponse } from "next/server";
+const DEFAULT_ALLOWED_ORIGINS = [
+  "https://nayeyar.github.io",
+  "http://localhost:3000",
+  "http://localhost:8888",
+];
 
-type InquiryPayload = {
-  name: string;
-  email: string;
-  project: string;
-};
+function parseAllowedOrigins() {
+  const raw = process.env.INQUIRY_ALLOWED_ORIGINS;
+  if (!raw) {
+    return DEFAULT_ALLOWED_ORIGINS;
+  }
 
-function isValidEmail(value: string) {
+  return raw
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
+function getCorsHeaders(origin, allowedOrigins) {
+  const allowedOrigin = origin && allowedOrigins.includes(origin) ? origin : "";
+
+  return {
+    "Access-Control-Allow-Origin": allowedOrigin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    Vary: "Origin",
+  };
+}
+
+function json(statusCode, body, origin, allowedOrigins) {
+  return {
+    statusCode,
+    headers: {
+      "Content-Type": "application/json",
+      ...getCorsHeaders(origin, allowedOrigins),
+    },
+    body: JSON.stringify(body),
+  };
+}
+
+function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function escapeHtml(value: string) {
+function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
@@ -19,15 +51,14 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#39;");
 }
 
-function parseInquiryPayload(payload: unknown): InquiryPayload | null {
+function parseInquiryPayload(payload) {
   if (!payload || typeof payload !== "object") {
     return null;
   }
 
-  const raw = payload as Record<string, unknown>;
-  const name = String(raw.name ?? "").trim();
-  const email = String(raw.email ?? "").trim();
-  const project = String(raw.project ?? "").trim();
+  const name = String(payload.name ?? "").trim();
+  const email = String(payload.email ?? "").trim();
+  const project = String(payload.project ?? "").trim();
 
   if (!name || name.length > 120) {
     return null;
@@ -42,32 +73,55 @@ function parseInquiryPayload(payload: unknown): InquiryPayload | null {
   return { name, email, project };
 }
 
-export async function POST(request: Request) {
+export async function handler(event) {
+  const allowedOrigins = parseAllowedOrigins();
+  const origin = event.headers.origin || event.headers.Origin || "";
+
+  if (event.httpMethod === "OPTIONS") {
+    const headers = getCorsHeaders(origin, allowedOrigins);
+    const statusCode = headers["Access-Control-Allow-Origin"] ? 204 : 403;
+    return {
+      statusCode,
+      headers,
+      body: "",
+    };
+  }
+
+  if (!origin || !allowedOrigins.includes(origin)) {
+    return json(403, { error: "Inquiry origin is not allowed." }, origin, allowedOrigins);
+  }
+
+  if (event.httpMethod !== "POST") {
+    return json(405, { error: "Method not allowed." }, origin, allowedOrigins);
+  }
+
   const resendApiKey = process.env.RESEND_API_KEY;
   if (!resendApiKey) {
-    return NextResponse.json(
+    return json(
+      503,
       {
         error:
           "Inquiry service is not configured. Set RESEND_API_KEY on the server to enable submissions.",
       },
-      { status: 503 },
+      origin,
+      allowedOrigins,
     );
   }
 
-  let body: unknown;
+  let body;
   try {
-    body = await request.json();
+    body = JSON.parse(event.body || "{}");
   } catch {
-    return NextResponse.json({ error: "Invalid JSON payload." }, { status: 400 });
+    return json(400, { error: "Invalid JSON payload." }, origin, allowedOrigins);
   }
 
   const inquiry = parseInquiryPayload(body);
   if (!inquiry) {
-    return NextResponse.json({ error: "Invalid inquiry fields." }, { status: 400 });
+    return json(400, { error: "Invalid inquiry fields." }, origin, allowedOrigins);
   }
 
-  const to = process.env.INQUIRY_TO_EMAIL ?? "nayayeyar2230@gmail.com";
-  const from = process.env.INQUIRY_FROM_EMAIL ?? "Portfolio Inquiry <onboarding@resend.dev>";
+  const to = process.env.INQUIRY_TO_EMAIL || "nayayeyar2230@gmail.com";
+  const from = process.env.INQUIRY_FROM_EMAIL || "Portfolio Inquiry <onboarding@resend.dev>";
 
   const subject = `Project inquiry from ${inquiry.name}`;
   const text = [
@@ -120,17 +174,21 @@ export async function POST(request: Request) {
           ? " Configure INQUIRY_FROM_EMAIL with a verified sender and INQUIRY_TO_EMAIL with an allowed recipient."
           : "";
 
-      return NextResponse.json(
+      return json(
+        502,
         { error: `Email delivery failed: ${resendMessage}.${guidance}` },
-        { status: 502 },
+        origin,
+        allowedOrigins,
       );
     }
 
-    return NextResponse.json({ success: true });
+    return json(200, { success: true }, origin, allowedOrigins);
   } catch {
-    return NextResponse.json(
+    return json(
+      500,
       { error: "Unexpected error while sending inquiry email." },
-      { status: 500 },
+      origin,
+      allowedOrigins,
     );
   }
 }

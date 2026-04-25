@@ -1,12 +1,16 @@
 .env
 
-node_modules
-
+AGENTS.md
+CONTEXT.md
 .codex/
 .cursor/
 
-.vscode
-.DS_Store
+node_modules/
 .next/
+coverage/
+out/
 build.log
 tsconfig.tsbuildinfo
+
+.vscode/
+.DS_Store

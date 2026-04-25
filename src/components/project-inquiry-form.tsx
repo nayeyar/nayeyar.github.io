@@ -8,12 +8,23 @@ type ProjectInquiryFormProps = {
   email: string;
 };
 
+const inquiryApiUrl = process.env.NEXT_PUBLIC_INQUIRY_API_URL?.trim();
+
 export function ProjectInquiryForm({ email }: ProjectInquiryFormProps) {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "submitting" | "success">("idle");
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!inquiryApiUrl) {
+      setSubmitStatus("idle");
+      setSubmitError(
+        "Inquiry form is not configured yet. Please use the direct email link below for now.",
+      );
+      return;
+    }
+
     setSubmitStatus("submitting");
     setSubmitError(null);
 
@@ -24,7 +35,7 @@ export function ProjectInquiryForm({ email }: ProjectInquiryFormProps) {
     const project = String(formData.get("project") ?? "").trim();
 
     try {
-      const response = await fetch("/api/inquiry", {
+      const response = await fetch(inquiryApiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +59,7 @@ export function ProjectInquiryForm({ email }: ProjectInquiryFormProps) {
       const message =
         error instanceof Error && error.message
           ? error.message
-          : "Could not send inquiry right now. You can use the direct email link below.";
+          : "Could not send inquiry right now. Please use the direct email link below.";
       setSubmitError(message);
     }
   };

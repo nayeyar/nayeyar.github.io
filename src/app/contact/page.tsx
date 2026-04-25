@@ -125,8 +125,7 @@ export default function ContactPage() {
           >
             <h2 className="text-2xl font-semibold">Project inquiry</h2>
             <p className="mt-4 text-sm leading-7 text-[var(--muted-strong)]">
-              Submit your project details through a secure server-side endpoint.
-              You can also use direct email as fallback.
+              Share project details here, or use direct email if the inquiry endpoint is unavailable.
             </p>
             <ProjectInquiryForm email={content.identity.email} />
           </MotionReveal>
