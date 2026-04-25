@@ -3,6 +3,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 import { MotionReveal } from "@/components/motion-reveal";
+import { ProjectInquiryForm } from "@/components/project-inquiry-form";
 import { SiteHeader } from "@/components/site-header";
 import { getPortfolioContent } from "@/lib/site-content";
 
@@ -124,54 +125,10 @@ export default function ContactPage() {
           >
             <h2 className="text-2xl font-semibold">Project inquiry</h2>
             <p className="mt-4 text-sm leading-7 text-[var(--muted-strong)]">
-              This form uses your mail client as the handoff so the page stays
-              deployment-ready without a backend dependency.
+              Submit your project details through a secure server-side endpoint.
+              You can also use direct email as fallback.
             </p>
-            <form
-              action={`mailto:${content.identity.email}`}
-              method="post"
-              encType="text/plain"
-              className="mt-8 grid gap-4"
-            >
-              <label className="grid gap-2 text-sm">
-                <span className="text-[var(--muted-strong)]">Name</span>
-                <input
-                  required
-                  name="name"
-                  className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 outline-none transition placeholder:text-[var(--muted)] focus:border-[var(--accent)]"
-                  placeholder="Your name"
-                />
-              </label>
-              <label className="grid gap-2 text-sm">
-                <span className="text-[var(--muted-strong)]">Email</span>
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 outline-none transition placeholder:text-[var(--muted)] focus:border-[var(--accent)]"
-                  placeholder="you@example.com"
-                />
-              </label>
-              <label className="grid gap-2 text-sm">
-                <span className="text-[var(--muted-strong)]">
-                  What are you building?
-                </span>
-                <textarea
-                  required
-                  name="project"
-                  rows={6}
-                  className="rounded-2xl border border-white/10 bg-white/10 px-4 py-3 outline-none transition placeholder:text-[var(--muted)] focus:border-[var(--accent)]"
-                  placeholder="Project scope, timeline, team size, and where AI fits."
-                />
-              </label>
-              <button
-                type="submit"
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
-              >
-                Send Inquiry
-                <ArrowUpRight className="h-4 w-4" />
-              </button>
-            </form>
+            <ProjectInquiryForm email={content.identity.email} />
           </MotionReveal>
         </div>
       </main>
