@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { BrandLogo } from "@/components/brand-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -18,6 +19,14 @@ const navItems = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const resolveHref = (href: string) => {
+    if (!href.startsWith("#")) {
+      return href;
+    }
+    return pathname === "/" ? href : `/${href}`;
+  };
 
   return (
     <header className="sticky top-4 z-50 mx-auto w-[min(1120px,calc(100%-1.5rem))]">
@@ -39,7 +48,7 @@ export function SiteHeader() {
           {navItems.map((item) => (
             <Link
               key={item.label}
-              href={item.href}
+              href={resolveHref(item.href)}
               className="rounded-full px-4 py-2 text-sm text-[var(--muted-strong)] transition hover:bg-white/10 hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
             >
               {item.label}
@@ -68,7 +77,7 @@ export function SiteHeader() {
           {navItems.map((item) => (
             <Link
               key={item.label}
-              href={item.href}
+              href={resolveHref(item.href)}
               className="rounded-2xl px-4 py-3 text-sm text-[var(--muted-strong)] transition hover:bg-white/10 hover:text-[var(--foreground)]"
               onClick={() => setOpen(false)}
             >
