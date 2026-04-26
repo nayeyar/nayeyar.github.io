@@ -70,7 +70,7 @@ export default function ContactPage() {
           </div>
           <CalendlyInlineWidget
             url={content.contact.bookingUrl}
-            className="calendly-inline-widget overflow-hidden rounded-[1.5rem] border border-white/10"
+            className="w-full overflow-hidden rounded-[1.5rem] border border-white/10"
           />
         </MotionReveal>
 
