@@ -1,7 +1,7 @@
 import { ArrowUpRight, CalendarDays, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
-import Script from "next/script";
 
+import { CalendlyInlineWidget } from "@/components/calendly-inline-widget";
 import { MotionReveal } from "@/components/motion-reveal";
 import { ProjectInquiryForm } from "@/components/project-inquiry-form";
 import { SiteHeader } from "@/components/site-header";
@@ -68,17 +68,11 @@ export default function ContactPage() {
               <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
-          <div
+          <CalendlyInlineWidget
+            url={content.contact.bookingUrl}
             className="calendly-inline-widget overflow-hidden rounded-[1.5rem] border border-white/10"
-            data-url={content.contact.bookingUrl}
-            style={{ minWidth: "320px", height: "700px" }}
           />
         </MotionReveal>
-        <Script
-          id="calendly-widget-script"
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="afterInteractive"
-        />
 
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <MotionReveal className="light-glass rounded-[2rem] border border-white/15 p-8">
