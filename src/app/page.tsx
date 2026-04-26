@@ -8,7 +8,6 @@ import { SiteHeader } from "@/components/site-header";
 import { SkillsMarquee } from "@/components/skills-marquee";
 import { TextScramble } from "@/components/text-scramble";
 import { getPortfolioContent } from "@/lib/site-content";
-import { cn } from "@/lib/utils";
 
 const content = getPortfolioContent();
 
@@ -194,16 +193,11 @@ export default function HomePage() {
                       ) : null}
                     </div>
                   </div>
-                  <div
-                    className={cn(
-                      "mt-6 flex flex-wrap gap-2",
-                      project.maxTagRows === 2 ? "max-h-[4.5rem] overflow-hidden" : "",
-                    )}
-                  >
+                  <div className="mt-6 flex flex-wrap items-center gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--muted-strong)]"
+                        className="rounded-full border border-white/10 bg-white/10 px-2.5 py-1 text-[10px] font-medium uppercase leading-4 tracking-[0.08em] text-[var(--muted-strong)] sm:px-3 sm:text-xs sm:tracking-[0.14em]"
                       >
                         {tag}
                       </span>
