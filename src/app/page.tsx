@@ -164,7 +164,7 @@ export default function HomePage() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="text-xl font-semibold">{project.name}</h3>
-                      <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--muted-strong)]">
+                      <p className="mt-3 max-w-xl text-[15px] leading-7 text-[var(--muted-strong)]">
                         {project.description}
                       </p>
                     </div>
