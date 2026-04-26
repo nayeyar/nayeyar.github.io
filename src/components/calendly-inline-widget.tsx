@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Script from "next/script";
 
 type CalendlyWindow = Window & {
   Calendly?: {
@@ -21,11 +22,11 @@ export function CalendlyInlineWidget({ url, className }: CalendlyInlineWidgetPro
 
   useEffect(() => {
     const win = window as CalendlyWindow;
-    let cancelled = false;
+    let attempts = 0;
 
     const mountWidget = () => {
-      if (cancelled || !containerRef.current || !win.Calendly) {
-        return;
+      if (!containerRef.current || !win.Calendly) {
+        return false;
       }
 
       // Clear stale iframes when revisiting the page through client-side navigation.
@@ -34,42 +35,33 @@ export function CalendlyInlineWidget({ url, className }: CalendlyInlineWidgetPro
         url,
         parentElement: containerRef.current,
       });
+      return true;
     };
 
-    const scriptEl = document.getElementById(CALENDLY_SCRIPT_ID) as HTMLScriptElement | null;
-    if (win.Calendly) {
-      mountWidget();
-      return () => {
-        cancelled = true;
-      };
+    if (mountWidget()) {
+      return;
     }
 
-    if (scriptEl) {
-      scriptEl.addEventListener("load", mountWidget);
-      return () => {
-        cancelled = true;
-        scriptEl.removeEventListener("load", mountWidget);
-      };
-    }
-
-    const script = document.createElement("script");
-    script.id = CALENDLY_SCRIPT_ID;
-    script.src = CALENDLY_SCRIPT_SRC;
-    script.async = true;
-    script.addEventListener("load", mountWidget);
-    document.body.appendChild(script);
+    const timer = window.setInterval(() => {
+      attempts += 1;
+      if (mountWidget() || attempts > 40) {
+        window.clearInterval(timer);
+      }
+    }, 150);
 
     return () => {
-      cancelled = true;
-      script.removeEventListener("load", mountWidget);
+      window.clearInterval(timer);
     };
   }, [url]);
 
   return (
-    <div
-      ref={containerRef}
-      className={className}
-      style={{ minWidth: "320px", height: "700px" }}
-    />
+    <>
+      <Script id={CALENDLY_SCRIPT_ID} src={CALENDLY_SCRIPT_SRC} strategy="afterInteractive" />
+      <div
+        ref={containerRef}
+        className={className}
+        style={{ minWidth: "320px", height: "700px" }}
+      />
+    </>
   );
 }
